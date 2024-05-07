@@ -10,7 +10,6 @@ var slider = document.getElementById("myRange");
 var output = document.getElementById("slider-info");
 output.innerHTML = slider.value + " x " + slider.value;
 
-// Update the current slider value (each time you drag the slider handle)
 slider.oninput = function () {
   output.innerHTML = this.value + " x " + this.value;
   removeCurrGrid();
@@ -44,28 +43,26 @@ function getRandomColor() {
   const green = Math.floor(Math.random() * 256);
   const blue = Math.floor(Math.random() * 256);
 
-  // Construct the CSS color string using RGB values
   const color = `rgb(${red}, ${green}, ${blue})`;
 
   return color;
 }
 
 function createGrid(value) {
-    console.log(value);
-    const cellSize = gridSize / value;
-    for (let i = 0; i < value * value; i++) {
-        const gridCell = document.createElement("div");
-        gridCell.style.width = `${cellSize}px`;
-        gridCell.style.height = `${cellSize}px`;
-        gridCell.classList.add("cell");
-  
-        grid.appendChild(gridCell);
-  
-        gridCell.addEventListener("mouseover", changeCellColor);
-      
-    }
-    addEventListener();
+  console.log(value);
+  const cellSize = gridSize / value;
+  for (let i = 0; i < value * value; i++) {
+    const gridCell = document.createElement("div");
+    gridCell.style.width = `${cellSize}px`;
+    gridCell.style.height = `${cellSize}px`;
+    gridCell.classList.add("cell");
+
+    grid.appendChild(gridCell);
+
+    gridCell.addEventListener("mouseover", changeCellColor);
   }
+  addEventListener();
+}
 
 function addEventListener() {
   const colorInput = document.getElementById("favcolor");
