@@ -27,22 +27,26 @@ body {
   width: 600px;
   margin-top: 20px;
 }
+
 h1 {
-  margin-top: 20px;
+  margin-top: 10px;
+  font-size: 46px;
+  font-family: "Caveat";
 }
 
 .slidecontainer {
   width: 500px; /* Width of the outside container */
-  margin-top: 40px;
+  margin-top: 20px;
   display: flex; /* Use flexbox */
   flex-direction: column; /* Stack items vertically */
   align-items: center; /* Center items horizontally */
   margin-bottom: 10px;
+  font-size: 20px;
+  font-family: "Sedgwick Ave Display";
 }
 
-.slider-info {
-  font-size: 20px;
-  margin-bottom: 5px;
+.slidecontainer .slider-info {
+    border: 1px solid red;
 }
 
 /* The slider itself */
@@ -76,7 +80,7 @@ h1 {
 .slider::-moz-range-thumb {
   width: 25px; /* Set a specific slider handle width */
   height: 25px; /* Slider handle height */
-  background: #04aa6d; /* Green background */
+  background: #953dec; /* Green background */
   cursor: pointer; /* Cursor on hover */
 }
 .slider {
@@ -97,7 +101,7 @@ h1 {
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  background: #04aa6d;
+  background: #8628a0;
   cursor: pointer;
 }
 

@@ -1,12 +1,27 @@
 let gridSize = 600;
-let row = 16;
-let col = 16;
-
 let color = "black";
-
+const colorInput = document.getElementById("favcolor");
 const grid = document.querySelector(".sketch-container");
+
 grid.style.width = `${gridSize}px`;
 grid.style.height = `${gridSize}px`;
+
+var slider = document.getElementById("myRange");
+var output = document.getElementById("slider-info");
+output.innerHTML = slider.value + ' x ' + slider.value;
+
+// Update the current slider value (each time you drag the slider handle)
+slider.oninput = function() {
+  output.innerHTML = this.value + ' x ' + this.value;
+  removeCurrGrid();
+  createGrid(this.value);
+}
+
+function removeCurrGrid() {
+    while(grid.firstChild) {
+        grid.removeChild(grid.firstChild);
+    }
+}
 
 function changeCellColor() {
   this.style.backgroundColor = getCellColor();
@@ -15,7 +30,11 @@ function changeCellColor() {
 function getCellColor() {
   if (color === "black") {
     return "black";
-  } else {
+  } 
+  else if(color === "custom"){ 
+    return `${colorInput.value}`;
+  }
+  else {
     return getRandomColor();
   }
 }
@@ -31,11 +50,11 @@ function getRandomColor() {
   return color;
 }
 
-function createGrid() {
-  for (let i = 0; i < row * col; i++) {
+function createGrid(value) {
+  for (let i = 0; i < value * value; i++) {
     const gridCell = document.createElement("div");
-    gridCell.style.width = `${gridSize / col - 2}px`;
-    gridCell.style.height = `${gridSize / row - 2}px`;
+    gridCell.style.width = `${gridSize / value - 2}px`;
+    gridCell.style.height = `${gridSize / value - 2}px`;
     gridCell.classList.add("cell");
 
     grid.appendChild(gridCell);
@@ -46,6 +65,7 @@ function createGrid() {
 }
 
 function addEventListener() {
+  const colorInput = document.getElementById("favcolor");
   const random = document.querySelector("#random");
   const black = document.querySelector("#black");
   const reset = document.querySelector("#reset");
@@ -56,6 +76,9 @@ function addEventListener() {
   black.addEventListener("click", () => {
     color = "black";
   });
+  colorInput.addEventListener("input", ()=> {
+    color = "custom";
+  })
   reset.addEventListener("click", () => {
     const grid = document.querySelectorAll(".sketch-container div");
     for (let i = 0; i < grid.length; i++) {
@@ -65,4 +88,4 @@ function addEventListener() {
   });
 }
 
-createGrid();
+createGrid(16);
