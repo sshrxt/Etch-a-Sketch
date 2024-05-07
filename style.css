@@ -18,11 +18,22 @@ body {
   box-shadow: 10px 10px rgba(0, 170, 255, 0.034);
 }
 
+
+
 .cell {
  
 }
 
-.footer {
+.footer{
+    margin-top: 110px;
+    text-align: center;
+    padding: 15px;
+    color: rgb(48, 46, 46);
+    font-weight: 900;
+    font-family: "Caveat Brush";
+}
+
+.choice-container {
   display: flex;
   justify-content: space-between;
   width: 600px;
