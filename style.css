@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: aliceblue;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.sketch-container {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: white;
+  box-shadow: 10px 10px rgba(0, 170, 255, 0.034);
+}
+
+.cell {
+  border: 1px solid whitesmoke;
+}
+
+h1 {
+  margin-top: 20px;
+}
