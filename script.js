@@ -21,10 +21,9 @@ function getCellColor() {
 }
 
 function getRandomColor() {
-  
   const red = Math.floor(Math.random() * 256);
-  const green = Math.floor(Math.random() * 256); 
-  const blue = Math.floor(Math.random() * 256); 
+  const green = Math.floor(Math.random() * 256);
+  const blue = Math.floor(Math.random() * 256);
 
   // Construct the CSS color string using RGB values
   const color = `rgb(${red}, ${green}, ${blue})`;
@@ -57,11 +56,11 @@ function addEventListener() {
   black.addEventListener("click", () => {
     color = "black";
   });
-  reset.addEventListener("click", ()=> {
-    const grid = document.querySelectorAll('.sketch-container div');
-    for(let i = 0; i < grid.length; i++) {
-        const currDiv = grid[i];
-        currDiv.style.backgroundColor = "white";
+  reset.addEventListener("click", () => {
+    const grid = document.querySelectorAll(".sketch-container div");
+    for (let i = 0; i < grid.length; i++) {
+      const currDiv = grid[i];
+      currDiv.style.backgroundColor = "white";
     }
   });
 }
