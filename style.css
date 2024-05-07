@@ -12,13 +12,14 @@ body {
 
 .sketch-container {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   background-color: white;
   box-shadow: 10px 10px rgba(0, 170, 255, 0.034);
 }
 
 .cell {
-  border: 1px solid whitesmoke;
+ 
 }
 
 .footer {
@@ -29,9 +30,9 @@ body {
 }
 
 h1 {
-  margin-top: 10px;
+  margin-top: 30px;
   font-size: 46px;
-  font-family: "Caveat";
+  font-family: "Caveat Brush";
 }
 
 .slidecontainer {
@@ -46,7 +47,7 @@ h1 {
 }
 
 .slidecontainer .slider-info {
-    border: 1px solid red;
+  border: 1px solid red;
 }
 
 /* The slider itself */
@@ -84,7 +85,7 @@ h1 {
   cursor: pointer; /* Cursor on hover */
 }
 .slider {
-  -webkit-appearance: none;
+
   width: 100%;
   height: 15px;
   border-radius: 5px;
@@ -111,4 +112,18 @@ h1 {
   border-radius: 50%;
   background: #04aa6d;
   cursor: pointer;
+}
+
+#reset {
+  background-color: rgb(49, 49, 49);
+}
+
+#eraser {
+  width: 50px;
+}
+
+#favcolor {
+  height: auto;
+  border: none;
+  outline: black;
 }
